@@ -72,11 +72,11 @@ public class Main  extends Application
      
     public void runTask() 
     {
-        for(int i = 1; i <= 10; i++) 
+        for(int j = 1; j <= 10; j++) 
         {
             try
             {
-                String status = "Processing " + i + " of " + 10;
+                String status = "Processing " + j + " of " + 10;
                 statusLabel.setText(status);
                 textArea.appendText(status+"\n");
                 Thread.sleep(1000);
