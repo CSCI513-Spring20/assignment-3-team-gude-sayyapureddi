@@ -1,3 +1,4 @@
+// SchedDemo.java
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,6 +12,8 @@ import javafx.stage.Stage;
  
 public class Main  extends Application
 {
+	piCalc ce;
+	Thread task1,task2;
     // Create the TextArea
     TextArea textArea = new TextArea();
      
@@ -34,7 +37,10 @@ public class Main  extends Application
         {
             public void handle(ActionEvent event) 
             {
-                runTask();
+            	
+            	ce =  new piCalc("Task1");
+            	task1 = new Thread(ce);
+            	task1.start ();
             }
         });
  
@@ -68,23 +74,5 @@ public class Main  extends Application
         stage.setTitle("A simple Concurrency Example");
         // Display the Stage
         stage.show();       
-    }
-     
-    public void runTask() 
-    {
-        for(int j = 1; j <= 10; j++) 
-        {
-            try
-            {
-                String status = "Processing " + j + " of " + 10;
-                statusLabel.setText(status);
-                textArea.appendText(status+"\n");
-                Thread.sleep(1000);
-            }
-            catch (InterruptedException e) 
-            {
-                e.printStackTrace();
-            }
-        }
     }
 }
