@@ -5,7 +5,7 @@ class piCalc extends Thread
       // Pass name to Thread name.
       super (name);
    }
-   double calcPI ()
+   double calcPI () //Calculation of Pi Value
    {
       boolean negative = true;
       double pi = 0.0;
@@ -23,8 +23,10 @@ class piCalc extends Thread
    }
    public void run ()
    {
-	   System.out.println (getName ());
-      for (int i = 0; i < 5; i++)
-         System.out.println ("PI Value" + ": " + calcPI ());           
+	   System.out.println (Thread.currentThread().getName()+" start: "+getName()); //Thread assigning
+      for (int i = 0; i < 5; i++)   											   // Printing Pi values
+         System.out.println ("PI Value" + ": " + calcPI ());
+      	
+      	System.out.println("\n"+Thread.currentThread().getName()+" End: "+getName());
    }
 }
