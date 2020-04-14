@@ -9,11 +9,11 @@
 ######################################################
 */
 
-public class Main {  //Main class
- 
-    public static void main(String[] args) {
-        
-	Scheduler scheduler = new Scheduler(10);  //Creating an object for scheduler
-	scheduler.run();
-}
+public class Main { // Main class
+
+	public static void main(String[] args) {
+
+		Scheduler scheduler = new Scheduler(10); // Creating an object for scheduler
+		scheduler.run();
+	}
 }
